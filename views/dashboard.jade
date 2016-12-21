@@ -4,27 +4,41 @@ block content
     include bootstrap
     include dashboardNavigation
     br
-    div(class="container-fluid")
-        div(class='row-fluid')
 
-            div(class='col-xs-4 col-md-2 well text-center')
-                form(class="form-horizontal" action='' method="POST")
-                    fieldset
-                        div(class="controls")
-                            input(type='text')
-                        br
-                        div(class="controls")
-                            input(type='submit' class='btn btn-default btn-sm' value='Post')
-                            input(type='button' class='btn btn-default btn-sm' value='Cancel')
-            div(class='col-xs-1 col-md-1')
-            div(class='col-xs-6 col-md-6 well text-center')
-                form(class="form-horizontal" action='' method="POST")
-                    fieldset
-                        div(class="controls")
-                            input#post_txt(type='text')
-                        br
-                        div(class="controls")
-                            input#post_add(type='submit' class='btn btn-default btn-sm' value='Post')
-                            input#post_cancel(type='button' class='btn btn-default btn-sm' value='Cancel')
-            div(class='col-xs-1 col-md-1')
-            div(class='col-xs-6 col-md-2 well text-center ')
+
+    div(id="mySidenav" class="sidenav")
+
+        a( href="#") About
+        a( href="#") Services
+        a( href="#") Clients
+        a( href="#") Contact
+        a( href="javascript:void(0)" class='text-right' onclick="closeNav()")
+            span(class="glyphicon glyphicon-remove")
+
+
+
+    script.
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            }
+
+        function closeNav() {
+           document.getElementById("mySidenav").style.width = "0";
+           document.getElementById("main").style.marginLeft= "0";
+           }
+
+            //div(class='col-xs-2 col-md-2 col-lg-2 well text-center' id='sideBar')
+
+    div(class="container-fluid" id="main")
+        div(class='row-fluid')
+            div(class='col-xs-2 col-md-2 col-lg-2 well text-center' id='sidBar')
+                span(style="cursor:pointer" onclick="openNav()") Shortcuts
+
+            div(class='col-xs-1 col-md-1 col-lg-1')
+            div(class='col-xs-6 col-md-6  col-lg-6 well text-center' id='newsFeed')
+
+                hr
+
+            div(class='col-xs-1 col-md-1 col-lg-1')
+            div(class='col-xs-2 col-md-2 col-lg-2 well text-center full' id='chatSide')
