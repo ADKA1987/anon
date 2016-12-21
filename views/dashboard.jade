@@ -1,11 +1,14 @@
 extends layout
 
 block content
-    h1= title
-    p Welcome to #{title}
+    include dashboardNavigation
+
+    include bootstrap
+
     div#feed
         div#post(class='container')
             form#post_form
                 input#post_txt(type='text')
-                input#post_add(type='submit' value='Post')
-                input#post_cancel(type='button' value='Cancel')
+                input#post_add(type='submit' class='btn btn-default' value='Post')
+                input#post_cancel(type='button' class='btn btn-default' value='Cancel')
+        div#notifcation
