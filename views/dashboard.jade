@@ -3,11 +3,28 @@ extends layout
 block content
     include bootstrap
     include dashboardNavigation
+    br
+    div(class="container-fluid")
+        div(class='row-fluid')
 
-    div#feed
-        div#post(class='container')
-            form#post_form
-                input#post_txt(type='text')
-                input#post_add(type='submit' class='btn btn-default' value='Post')
-                input#post_cancel(type='button' class='btn btn-default' value='Cancel')
-        div#notifcation
+            div(class='col-xs-4 col-md-2 well text-center')
+                form(class="form-horizontal" action='' method="POST")
+                    fieldset
+                        div(class="controls")
+                            input(type='text')
+                        br
+                        div(class="controls")
+                            input(type='submit' class='btn btn-default btn-sm' value='Post')
+                            input(type='button' class='btn btn-default btn-sm' value='Cancel')
+            div(class='col-xs-1 col-md-1')
+            div(class='col-xs-6 col-md-6 well text-center')
+                form(class="form-horizontal" action='' method="POST")
+                    fieldset
+                        div(class="controls")
+                            input#post_txt(type='text')
+                        br
+                        div(class="controls")
+                            input#post_add(type='submit' class='btn btn-default btn-sm' value='Post')
+                            input#post_cancel(type='button' class='btn btn-default btn-sm' value='Cancel')
+            div(class='col-xs-1 col-md-1')
+            div(class='col-xs-6 col-md-2 well text-center ')
